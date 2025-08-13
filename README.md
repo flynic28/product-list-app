@@ -1,6 +1,12 @@
 # ProductApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.  
+
+This project leverages dummyjson.com api for the product list as well as authentication via JWT Token (username/password can be found here `https://dummyjson.com/users`).  I added an authentication service which handles the login; an interceptor to handle adding JWT to API calls; guards for handling session expiration.  I would normally add handling the refresh token to persist the session but felt that may be too much for this example.
+
+Components typically contains sharedish components that could be used in a few different features (in this example the product-item probably belongs in the product feature as it probably wont be reused). Features are normally larger functional views, ie page views or modal/dialogs.  Services are going to the normal services which could be both UI services and Data Access services (I have separated these two different types in larger projects).  Models contains chared interfaces/types which will span components and features, any model that is created but only used in a single feature typically is written in the class.
+
+Interceptors are handling error and auth headers
 
 ## Development server
 

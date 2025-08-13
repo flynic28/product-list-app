@@ -1,0 +1,26 @@
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    height: calc(100% - 2rem);
+    padding: 1rem;
+}
+
+.product-card {
+    height: 100%;
+    width: 60%;
+    max-width: 600px;
+    overflow: hidden;
+    mat-card-header {
+        flex: none;
+    }
+    mat-card-content {
+        flex: 1;
+        overflow: auto;
+    }
+}
+
+.searchControl {
+    width: 100%;
+}

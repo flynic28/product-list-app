@@ -1,0 +1,32 @@
+<div class="container">
+    <mat-card class="product-card">
+      <mat-card-header>
+        <mat-form-field class="searchControl" appearance="fill">
+            <mat-label>Search Product</mat-label>
+            <input matInput [formControl]="searchControl">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+      </mat-card-header>
+        <mat-card-content>
+            @if (searchControlValue().length < 3) {
+                <div class="unable-search-container">
+                    <h4>Search using atleast 3 characters</h4>
+                </div>
+            } @else if (isLoading()) {
+                <mat-spinner diameter="60"></mat-spinner>
+            } @else {
+                @if (products().length === 0) {
+                    <div class="no-search-results-container">
+                        <h4>No Results</h4>
+                    </div>    
+                } @else if (products().length > 0) {
+                    <div class="product-list-container">
+                        @for (product of products(); track product.id) {
+                            <app-product-item [product]="product" />
+                        }    
+                    </div>
+                }
+            }
+        </mat-card-content>
+    </mat-card>      
+</div>

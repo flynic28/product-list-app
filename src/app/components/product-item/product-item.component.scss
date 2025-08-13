@@ -1,0 +1,16 @@
+.product-item-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+.thumbnail {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+.metadata {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
